@@ -114,7 +114,7 @@ with open('4.txt', 'w') as file:
 #converting Magnitude col to float type, filtering type, finding avg for magnitude and ordering the same and writing to csv
 df.withColumn('Magnitude', col('Magnitude').cast('float')).filter(col('Type') == 'Earthquake').groupBy('Year').agg(avg('Magnitude')).orderBy('avg(Magnitude)').write.csv("5.csv", header=True, mode="overwrite")
 
-Result:
+#Result:
 # +----+------------------+
 # |Year|    avg(Magnitude)|
 # +----+------------------+
